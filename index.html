@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利用規約 | Leap Goals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F4F9;
+    --surface:#FFFFFF;
+    --surface-recessed:#EEEDF4;
+    --t1:#2C2536;
+    --t2:#5C5470;
+    --t3:#9E9AB0;
+    --acc:#B39DDB;
+    --acc-deep:#7E57C2;
+    --acc-soft:#EDE7F6;
+    --acc-border:#D1C4E9;
+    --border:#DDD9EA;
+    --ok:#2E7D32;
+    --ok-soft:#E8F5E9;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --radius-sm:9px;
+    --serif-jp:'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+    --body-jp:'Noto Sans JP', 'Hiragino Sans', sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--t1);
+    font-family:var(--body-jp);
+    font-size:16px;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:var(--acc-deep); text-decoration-thickness:1px; text-underline-offset:2px; }
+  a:focus-visible, button:focus-visible, .toc-link:focus-visible{
+    outline:2.5px solid var(--acc-deep);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- Header ---------- */
+  .site-header{
+    padding:22px 0;
+    border-bottom:1px solid var(--border);
+    background:rgba(245,244,249,0.86);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:20;
+  }
+  .site-header .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--serif-jp);
+    font-weight:700;
+    font-size:17px;
+    letter-spacing:-0.01em;
+    color:var(--t1);
+  }
+  .brand-mark{
+    width:30px; height:30px;
+    border-radius:9px;
+    background:linear-gradient(155deg, var(--acc) 0%, var(--acc-deep) 100%);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .brand-mark svg{ width:16px; height:16px; }
+  .header-meta{
+    font-size:13px;
+    color:var(--t3);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:76px 0 64px;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    color:var(--acc-deep);
+    background:var(--acc-soft);
+    border:1px solid var(--acc-border);
+    padding:6px 14px;
+    border-radius:99px;
+    margin-bottom:22px;
+  }
+  h1{
+    font-family:var(--serif-jp);
+    font-size:clamp(32px, 4.4vw, 48px);
+    font-weight:900;
+    letter-spacing:-0.02em;
+    line-height:1.25;
+    margin:0 0 30px;
+    color:var(--t1);
+  }
+  .hero-facts{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 28px;
+    font-size:13.5px;
+    color:var(--t3);
+  }
+  .hero-facts strong{
+    color:var(--t1);
+    font-weight:600;
+  }
+
+  /* ---------- Layout: TOC + content ---------- */
+  .content-area{
+    padding-bottom:96px;
+  }
+  .content-grid{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:64px;
+    align-items:start;
+  }
+
+  .toc{
+    position:sticky;
+    top:96px;
+  }
+  .toc-title{
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    color:var(--t3);
+    margin:0 0 14px;
+  }
+  .toc-list{
+    list-style:none;
+    margin:0; padding:0;
+    border-left:1.5px solid var(--border);
+  }
+  .toc-link{
+    display:block;
+    padding:7px 0 7px 16px;
+    margin-left:-1.5px;
+    border-left:1.5px solid transparent;
+    font-size:13.5px;
+    color:var(--t2);
+    text-decoration:none;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .toc-link:hover{ color:var(--acc-deep); border-left-color:var(--acc-border); }
+
+  main{ min-width:0; }
+
+  .policy-section{
+    padding:40px 0;
+    border-top:1px solid var(--border);
+    scroll-margin-top:90px;
+  }
+  .policy-section:first-child{ border-top:none; padding-top:0; }
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:18px;
+  }
+  .section-num{
+    font-family:var(--serif-jp);
+    font-weight:900;
+    font-size:15px;
+    color:var(--acc-deep);
+    background:var(--acc-soft);
+    border:1px solid var(--acc-border);
+    width:34px; height:34px;
+    border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  h2{
+    font-family:var(--serif-jp);
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--t1);
+  }
+
+  .policy-section p{
+    color:var(--t2);
+    margin:0 0 16px;
+  }
+  .policy-section p:last-child{ margin-bottom:0; }
+
+  .policy-list{
+    list-style:none;
+    margin:0 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .policy-list li{
+    position:relative;
+    padding-left:22px;
+    color:var(--t2);
+  }
+  .policy-list li::before{
+    content:"";
+    position:absolute;
+    left:0; top:9px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--acc);
+  }
+  .policy-list strong{
+    display:block;
+    color:var(--t1);
+    font-weight:600;
+    margin-bottom:3px;
+  }
+
+  /* Guarantee highlight card */
+  .guarantee{
+    margin-top:24px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    background:var(--surface);
+    border:1.5px solid var(--acc-border);
+    border-radius:var(--radius-md);
+    padding:22px 24px;
+    box-shadow:0 1px 0 rgba(44,37,54,0.02);
+  }
+  .guarantee-icon{
+    flex-shrink:0;
+    width:38px; height:38px;
+    border-radius:11px;
+    background:linear-gradient(155deg, var(--acc) 0%, var(--acc-deep) 100%);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .guarantee-icon svg{ width:19px; height:19px; }
+  .guarantee-body strong{
+    display:block;
+    font-size:15px;
+    color:var(--t1);
+    margin-bottom:4px;
+  }
+  .guarantee-body p{
+    margin:0;
+    font-size:14.5px;
+    color:var(--t2);
+  }
+
+  .disclaimer-box{
+    background:var(--surface-recessed);
+    border-radius:var(--radius-md);
+    padding:20px 24px;
+    font-size:14.5px;
+    color:var(--t2);
+  }
+  .disclaimer-box p{ margin:0; color:var(--t2); }
+
+  /* ---------- Feedback CTA ---------- */
+  .feedback-cta{
+    margin-top:44px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    background:var(--acc-soft);
+    border:1.5px solid var(--acc-border);
+    border-radius:var(--radius-lg);
+    padding:28px 32px;
+  }
+  .feedback-cta-text strong{
+    display:block;
+    font-size:16px;
+    color:var(--t1);
+    margin-bottom:5px;
+  }
+  .feedback-cta-text p{
+    margin:0;
+    font-size:14px;
+    color:var(--t2);
+  }
+  .feedback-button{
+    flex-shrink:0;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--acc-deep);
+    color:#fff;
+    font-size:14.5px;
+    font-weight:600;
+    text-decoration:none;
+    padding:13px 22px;
+    border-radius:99px;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .feedback-button:hover{ background:#6A44A8; transform:translateY(-1px); }
+  .feedback-button svg{ width:15px; height:15px; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--border);
+    padding:32px 0 40px;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .footer-note{
+    font-size:12.5px;
+    color:var(--t3);
+  }
+  .back-to-top{
+    font-size:12.5px;
+    color:var(--t2);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+  }
+  .back-to-top:hover{ color:var(--acc-deep); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .content-grid{ grid-template-columns:1fr; gap:0; }
+    .toc{
+      position:static;
+      margin-bottom:36px;
+      padding-bottom:20px;
+      border-bottom:1px solid var(--border);
+    }
+    .toc-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      border-left:none;
+    }
+    .toc-link{
+      border:1px solid var(--border);
+      border-radius:99px;
+      padding:6px 13px;
+      margin-left:0;
+    }
+    .toc-link:hover{ border-color:var(--acc-border); }
+  }
+
+  @media (max-width:520px){
+    .wrap{ padding:0 20px; }
+    .hero{ padding:48px 0 40px; }
+    .guarantee{ flex-direction:column; }
+    .feedback-cta{ flex-direction:column; align-items:flex-start; padding:24px; }
+    .feedback-button{ width:100%; justify-content:center; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 16L10 10L14 14L20 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 6H20V12" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      Leap Goals
+    </div>
+    <div class="header-meta">最終更新日：2026年7月18日</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">TERMS OF SERVICE</span>
+    <h1>利用規約</h1>
+    <div class="hero-facts">
+
+    </div>
+  </div>
+</section>
+
+<div class="content-area">
+
+  <div class="wrap content-grid">
+
+    <nav class="toc" aria-label="目次">
+      <p class="toc-title">目次</p>
+      <ul class="toc-list">
+        <li><a class="toc-link" href="#s1">01. 適用</a></li>
+        <li><a class="toc-link" href="#s2">02. 利用料金および決済</a></li>
+        <li><a class="toc-link" href="#s3">03. データ管理とパスコード</a></li>
+        <li><a class="toc-link" href="#s4">04. 知的財産権</a></li>
+        <li><a class="toc-link" href="#s5">05. 禁止事項</a></li>
+        <li><a class="toc-link" href="#s6">06. 免責事項</a></li>
+        <li><a class="toc-link" href="#s7">07. 規約の変更および準拠法</a></li>
+      </ul>
+    </nav>
+
+    <main>
+
+      <article class="policy-section" id="s1">
+        <div class="section-head">
+          <span class="section-num" aria-hidden="true">01</span>
+          <h2>適用</h2>
+        </div>
+        <p>
+          本利用規約（以下「本規約」）は、本アプリケーション「Leap Goals」（以下「本アプリ」）の提供者（以下「開発者」）が提供する本アプリの利用条件を定めるものです。ユーザーは、本アプリを購入またはダウンロードした時点で、本規約およびApple Inc.が定める「標準アプリケーションライセンス契約（Standard EULA）」に同意したものとみなされます。
+        </p>
+        <p>
+          本規約の規定がApple Inc.の定める規約（App Store利用規約等）と矛盾する場合は、Apple Inc.の規約が優先して適用されます。
+        </p>
+      </article>
+
+      <article class="policy-section" id="s2">
+        <div class="section-head">
+          <span class="section-num" aria-hidden="true">02</span>
+          <h2>利用料金および決済</h2>
+        </div>
+        <p>
+          本アプリは有料（買い切り型）です。利用料金は、App Storeにおいて表示される価格に基づきます。
+        </p>
+        <ul class="policy-list">
+          <li>
+            <strong>決済の処理</strong>
+            本アプリの購入、支払、および返金に関する手続きや決済処理は、すべてApple Inc.の決済システムを通じて行われます。
+          </li>
+          <li>
+            <strong>免責</strong>
+            開発者は、決済の成否や返金対応について直接の権限を持たず、一切の責任を負いません。
+          </li>
+        </ul>
+      </article>
+
+      <article class="policy-section" id="s3">
+        <div class="section-head">
+          <span class="section-num" aria-hidden="true">03</span>
+          <h2>データ管理とパスコードについて</h2>
+        </div>
+        <p>
+          本アプリは、ユーザーが入力した一切のデータをユーザー自身の端末内（ローカル環境）にのみ保存します。開発者はユーザーのデータを外部サーバー等に送信、収集、または蓄積しません。
+        </p>
+        <ul class="policy-list">
+          <li>
+            <strong>パスコードロックの利用</strong>
+            本アプリ内で設定可能なパスコードロック機能およびデータの暗号化バックアップ機能は、端末内のデータ安全性を高めるための補助的機能であり、データの完全な保護や復元を保証するものではありません。
+          </li>
+        </ul>
+
+        <div class="guarantee">
+          <span class="guarantee-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="11" width="14" height="10" rx="2.5" fill="white"/>
+              <path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <circle cx="12" cy="16" r="1.6" fill="#7E57C2"/>
+            </svg>
+          </span>
+          <div class="guarantee-body">
+            <strong>データの自己責任原則</strong>
+            <p>端末の紛失、破損、故障、アプリの削除、または機種変更時のバックアップ不備等によるデータの消失について、開発者は一切の責任を負いません。データの管理およびバックアップは、ユーザー自身の責任において行うものとします。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="policy-section" id="s4">
+        <div class="section-head">
+          <span class="section-num" aria-hidden="true">04</span>
+          <h2>知的財産権</h2>
+        </div>
+        <p>
+          本アプリに関する著作権、商標権、プログラム、意匠、その他一切の知的財産権は、開発者または正当な権利者に帰属します。ユーザーは、本アプリを私的利用の範囲を超えて複製、転載、改変、または再配布することはできません。
+        </p>
+      </article>
+
+      <article class="policy-section" id="s5">
+        <div class="section-head">
+          <span class="section-num" aria-hidden="true">05</span>
+          <h2>禁止事項</h2>
+        </div>
+        <p>ユーザーは、本アプリの利用にあたり、以下の行為を行ってはなりません。</p>
+        <ul class="policy-list">
+          <li>本アプリの逆コンパイル、逆アセンブル、リバースエンジニアリング、その他ソースコードを解析する行為。</li>
+          <li>本アプリの不具合を意図的に利用した不正な操作。</li>
+          <li>開発者または第三者の知的財産権、プライバシー、その他の権利を侵害する行為。</li>
+          <li>Apple Inc.の定める規約に違反する行為。</li>
+        </ul>
+      </article>
+
+      <article class="policy-section" id="s6">
+        <div class="section-head">
+          <span class="section-num" aria-hidden="true">06</span>
+          <h2>免責事項</h2>
+        </div>
+        <div class="disclaimer-box">
+          <p>
+            開発者は、本アプリの正確性、完全性、特定の目的への適合性、またはバグや不具合がないことについて、明示的にも黙示的にも一切保証しません。本アプリの使用、または使用不能によってユーザーに生じた直接的、間接的、偶発的、特別、または結果的な損害（データ消失、端末の動作不良、その他経済的・精神的損失を含む）について、開発者は一切の責任を負いません。
+          </p>
+        </div>
+      </article>
+
+      <article class="policy-section" id="s7">
+        <div class="section-head">
+          <span class="section-num" aria-hidden="true">07</span>
+          <h2>規約の変更および準拠法</h2>
+        </div>
+        <p>
+          開発者は、必要と判断した場合には、ユーザーの承諾を得ることなく随時本規約を変更できるものとします。変更後の規約は、本アプリ内または開発者の指定するウェブサイトに掲載された時点から効力を生じるものとします。
+        </p>
+        <ul class="policy-list">
+          <li>本規約の解釈にあたっては、日本法を準拠法とします。</li>
+          <li>本アプリまたは本規約に関して紛争が生じた場合は、開発者の居住地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</li>
+        </ul>
+
+        <div class="feedback-cta">
+          <div class="feedback-cta-text">
+            <strong>ご意見・ご要望をお聞かせください</strong>
+            <p>アプリの改善のため、フィードバックにご協力いただけると嬉しいです。</p>
+          </div>
+          <a class="feedback-button" href="https://forms.gle/3FoVzgjczbHPzuVS8" target="_blank" rel="noopener noreferrer">
+            フィードバックを送る
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span class="footer-note">© 2026 Leap Goals. </span>
+    <a class="back-to-top" href="#top">↑ ページの先頭へ</a>
+  </div>
+</footer>
+
+</body>
+</html>
